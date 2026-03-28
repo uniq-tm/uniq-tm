@@ -1,43 +1,107 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Uniq-tm</title>
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  <style>
+    body {
+      background-color: #0B1D3D;
+      color: white;
+    }
+  </style>
+</head>
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+<body>
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+<!-- NAVBAR -->
+<nav class="fixed w-full flex justify-between p-6 bg-black/40 backdrop-blur z-50">
+  <h1 class="text-xl font-bold">Uniq-tm</h1>
+  <div class="space-x-6">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
+<!-- HERO -->
+<section class="h-screen flex flex-col justify-center items-center text-center">
+  <video autoplay loop muted class="absolute w-full h-full object-cover -z-10">
+    <source src="drone.mp4" type="video/mp4">
+  </video>
+
+  <h1 class="text-5xl font-bold mb-4">
+    Unique 360° Drone Media
+  </h1>
+  <p class="mb-6">
+    For real estate, projects and more
+  </p>
+
+  <div class="space-x-4">
+    <a href="#portfolio" class="bg-white text-black px-6 py-3 rounded">
+      View Projects
+    </a>
+    <a href="#contact" class="border px-6 py-3 rounded">
+      Contact Us
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="p-20 text-center">
+  <h2 class="text-3xl mb-6">About Uniq-tm</h2>
+  <p>
+    We create immersive 360° drone visuals that bring projects to life.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="p-20 bg-white text-black text-center">
+  <h2 class="text-3xl mb-6">Services</h2>
+  <div class="grid md:grid-cols-4 gap-6">
+    <div>360° Drone Photography</div>
+    <div>Drone Video</div>
+    <div>Real Estate Visuals</div>
+    <div>Project Monitoring</div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="p-20 text-center">
+  <h2 class="text-3xl mb-6">Projects</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-gray-700 h-40"></div>
+    <div class="bg-gray-700 h-40"></div>
+    <div class="bg-gray-700 h-40"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="p-20 bg-white text-black text-center">
+  <h2 class="text-3xl mb-6">Contact</h2>
+  <form class="flex flex-col gap-4 max-w-md mx-auto">
+    <input placeholder="Name" class="p-3 border" />
+    <input placeholder="Email" class="p-3 border" />
+    <textarea placeholder="Message" class="p-3 border"></textarea>
+    <button class="bg-[#0B1D3D] text-white p-3">
+      Send Message
+    </button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="p-6 text-center bg-black">
+  <p>© 2026 Uniq-tm</p>
+  <div class="space-x-4 mt-2">
+    <a href="#">Instagram</a>
+    <a href="#">LinkedIn</a>
+    <a href="#">YouTube</a>
+  </div>
+</footer>
+
+</body>
+</html>
